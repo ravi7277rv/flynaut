@@ -1,0 +1,59 @@
+body{
+    background-image: url("/images/login1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
+.container{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   height: 600px;
+}
+.formcontainer{
+   background-color: rgba(0, 0, 0, 0.5);
+   width: 300px;
+   height: 500px;
+   border-radius: 40px;
+   color: white;
+}
+.formcontainer h1{
+    text-align: center;
+}
+.formcontainer p{
+    margin-left: 10px;
+    font-size: 17px;
+}
+.formcontainer p a{
+    text-decoration: none;
+    color: aqua;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+form label{
+    margin: 5px;
+}
+form input{
+    margin: 5px 10px;
+    padding: 5px;
+}
+.btn{
+    text-align: center;
+    color: rgb(91, 54, 9);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 30%;
+    margin-left: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.btn:hover{
+    color: rgb(9, 91, 9);
+}
+#signupError{
+    color: rgb(174, 8, 8);
+}

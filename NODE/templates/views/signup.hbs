@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp User</title>
+    <link rel="stylesheet" href="/css/signup.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="formcontainer">
+            <h1>SignUp User</h1>
+            <form action="/signup" method="post">
+                <label>User Name</label>
+                <input type="text" name="name"  placeholder="ex.smaple name" required />
+                <label>User Email</label>
+                <input type="email" name="email"  placeholder="ex.demo@gmail.com" required />
+                <label>Password</label>
+                <input type="password" name="password"  placeholder="ex.your passowrd" required />
+                <label>Confirm Passowrd</label>
+                <input type="password" name="cpassword"  placeholder="confirmPassword" required />
+                <button class="btn btn-primary">SignUp</button>
+            </form>
+            <p>Already have Account &nbsp; <a href="/">Login</a></p>
+            {{#if message}}
+            <p id="signupError">{{message}}</p>
+            {{/if}}
+        </div>
+    </div>
+</body>
+<script>
+    let signupError = document.getElementById('signupError');
+
+    function changeStyle() {
+        signupError.style.display = "none";
+    }
+    setTimeout(changeStyle, 3000)
+</script>
+
+</html>

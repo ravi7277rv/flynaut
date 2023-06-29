@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <%- include('./includes/head') %>
+        <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+
+    <section>
+        <div class="maindiv">
+            <div class="formContainer">
+                
+                <form action="/" method="POST" id="form">
+                    <h3>Login Here</h3>
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" class="inputbox" placeholder="ex: example@gmail.com">
+                    <% if(error=='emailerr' ){ %>
+                        <p class="pmsg">Invalid email</p>
+                        <% } else{ %>
+                            <p class="pmsg"></p>
+                            <% } %>
+
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" class="inputbox"
+                                    placeholder="ex: Enter Password">
+                                <% if(error=='passerr' ){ %>
+                                    <p class="pmsg">Invalid password</p>
+                                    <% }else if(error=='Missing credentials' ){ %>
+                                        <p class="pmsg">One or more field is empty</p>
+                                        <% }else{ %>
+                                            <p class="pmsg"></p>
+                                            <% } %>
+
+                                                <input type="hidden" name="redirect" value="<%= redirect %>">
+                                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+                                                <button id="btn">Login</button>
+
+                                                <a href="/signup?redirect=<%= redirect %>">Don't have Account?
+                                                    SignUp</a>
+
+                </form>
+            </div>
+            <!-- <div id="right"><%- include('./includes/svg/loginbk') %></div> -->
+        </div>
+
+    </section>
+
+</body>
+
+</html>
